@@ -11,12 +11,15 @@
 	<action-mappings>
 		<!-- En path hay que poner la dirección que queremos que salga en el navegador, 
 			en type el lugar donde tenemos el action -->
-		<action path="/saludo" type="common.action.HolaMundoAction" name="holaMundoForm">
+			<action path="/saludo" type="common.action.HolaMundoAction" name="holaMundoForm" validate="true"
+			input="/pages/LogicExample.jsp">
 
 			<!-- Aquí en el forward es donde añadimos los alias, y sus diecciones -->
 			<forward name="success" path="/HolaMundo.jsp" />
 
 		</action>
+		
+		
 	</action-mappings>
 
 </struts-config>
