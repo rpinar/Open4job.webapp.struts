@@ -1,0 +1,39 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Maven Struts Examples</display-name>
+
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<!-- Indicamos lo que vamos a usar -->
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<!-- Indicamos la ruta donde está la configuración de struts -->
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				/WEB-INF/struts-config.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>HolaMundoForm</servlet-name>
+		<display-name>HolaMundoForm</display-name>
+		<description></description>
+		<servlet-class>common.form.HolaMundoForm</servlet-class>
+	</servlet>
+	<!-- Indicamos que las action las podamos llamar mediante *.do  -->
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HolaMundoForm</servlet-name>
+		<url-pattern>/HolaMundoForm</url-pattern>
+	</servlet-mapping>
+
+</web-app>
